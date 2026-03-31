@@ -1,0 +1,25 @@
+# =============================================================================
+# requirements.txt — Python dependencies for Weather ADK Agent
+# Gen AI Academy APAC Edition — Track 1 Submission
+# =============================================================================
+ 
+# Google ADK — Agent Development Kit (core framework for building AI agents)
+google-adk==1.2.1
+ 
+# Google GenAI SDK — needed by ADK to communicate with Gemini models
+google-genai>=1.0.0
+ 
+# FastAPI — lightweight web framework to expose the agent as an HTTP endpoint
+fastapi>=0.115.0
+ 
+# Uvicorn — ASGI server that runs the FastAPI app (used in production on Cloud Run)
+uvicorn[standard]>=0.32.0
+ 
+# Requests — used inside the weather tool to call the OpenWeather API
+requests>=2.32.0
+ 
+# Python-dotenv — loads API keys from .env file during local development
+python-dotenv>=1.0.0
+ 
+# Pydantic — data validation for FastAPI request/response models
+pydantic>=2.0.0
