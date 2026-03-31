@@ -197,8 +197,14 @@
         </div>`;
 
       try {
-        // ✅ Uses GET request — matches your existing server.js
-        const response = await fetch(`/weather?query=${encodeURIComponent(query)}`);
+        // ✅ Uses GE
+        const response = await fetch(`/weather`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ query })
+      });
         const data = await response.json();
 
         if (data.error) {
