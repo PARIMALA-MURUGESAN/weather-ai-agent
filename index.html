@@ -198,13 +198,12 @@
 
       try {
         // ✅ Uses GE
-        const response = await fetch(`/weather`, {
+        const response = await fetch("https://weather-ai-agent-production.up.railway.app/weather", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query })
       });
+
         const data = await response.json();
 
         if (data.error) {
@@ -214,8 +213,8 @@
           speak(data.answer);
         }
       } catch (err) {
-        output.innerHTML = `<span class="error">❌ Could not reach the server. Make sure node server.js is running.</span>`;
-      } finally {
+  output.innerHTML = `<span class="error">❌ Failed to fetch response from server.</span>`;
+} finally {
         btn.disabled = false;
       }
     }
@@ -232,6 +231,7 @@
     document.getElementById('query').addEventListener('keydown', e => {
       if (e.key === 'Enter') getWeather();
     });
+    console.log("STATUS:", response.status);
   </script>
 </body>
 </html>
