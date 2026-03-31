@@ -19,7 +19,7 @@ def get_current_weather(city: str) -> dict:
         A dictionary containing temperature, condition, humidity, and wind speed,
         or an error message if the city is not found.
     """
-    api_key = os.environ.get("OPENWEATHER_API_KEY")
+    api_key = os.environ.get("API_KEY")
     if not api_key:
         return {"error": "OpenWeather API key not configured."}
 
