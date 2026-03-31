@@ -16,9 +16,6 @@ from weather_agent.agent import root_agent
 # Load environment variables from .env file (for local development)
 from dotenv import load_dotenv
 load_dotenv()
-import os
-print("GEMINI:", os.environ.get("GEMINI_API_KEY"))
-print("WEATHER:", os.environ.get("API_KEY"))
 # =============================================================================
 # APP SETUP
 # =============================================================================
